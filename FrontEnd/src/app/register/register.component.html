@@ -1,0 +1,48 @@
+<h1 style="color:black;">
+    {{response}}</h1>
+<div class="login-page">
+
+    <mat-card class="mat-elevation-z12 signin-bg">
+        <mat-card-title style="text-align:center;">
+            SignUp
+        </mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+
+            <mat-card-content>
+
+                <mat-tab label="Sign Up">
+                    <mat-card-content>
+                        <form (ngSubmit)="OnRegister()">
+                            <mat-form-field>
+                                <input matInput placeholder="User Name" required name="user"
+                                    [(ngModel)]="authenticationRequest.username">
+
+                                <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                            </mat-form-field>
+
+                           
+                            <mat-form-field>
+                                <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+                                    placeholder="password" type="password" required minlength="6" name="password"
+                                    [(ngModel)]="authenticationRequest.password">
+                                    
+                                
+                                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                    {{showPassword?'visibility':'visibility_off'}}
+                                </mat-icon>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput [type]="showPassword ?'text' : 'Confirmpassword'" placeholder="Confirmpassword"  type="password" required minlength="6"  name="Confirmpassword"
+                                [(ngModel)]="authenticationRequest.confirmpassword" >
+                                <!-- <mat-error *ngIf="email.invalid">Email is required</mat-error> -->
+                                <mat-icon  matSuffix (click)="toggleconfirmPasswordVisibility()" >{{showConfirmpassword?'visibility':'visibility_off'}}</mat-icon>
+                            </mat-form-field>
+                           
+                            <button mat-raised-button color="primary" >
+                                Sign Up
+                            </button>
+                        </form>
+
+                    </mat-card-content>
+                </mat-tab>
+

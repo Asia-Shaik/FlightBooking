@@ -1,0 +1,60 @@
+.full-width{
+    width:100%;
+}
+.login-page {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    height: 500 px;
+    color: #fff;
+  
+    /* background-color: #303F9F;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+mat-card {
+    width: 30%;
+    margin: 9% auto;
+    border-color: rgba(0, 38, 143, 0.52);
+    border-style: solid;
+    border-radius: 8px;
+    font-style: normal;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(2, 31, 31);
+}
+
+mat-form-field,
+mat-checkbox {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+mat-card-content {
+    margin-top: 20px;
+}
+
+.login-button {
+    margin-top: 20px;
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+}
+.login-page{
+    width:100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(4, 9, 31, 0.315),rgba(5, 12, 37, 0.377)), url(flight2.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.signin-bg
+{
+    background: whitesmoke;
+}

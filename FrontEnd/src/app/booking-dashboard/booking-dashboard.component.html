@@ -1,0 +1,104 @@
+<nav class="navbar navbar-light bg-secondary">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue;"> Booking </h1>
+        <div class="d-flex">
+            <button (click)="clickAddBook()" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Book</button>
+            
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Flight Name</th>
+            <th scope="col">Flight Number</th>
+            <th scope="col">Seat Number</th>
+            <th scope="col">From Location</th>
+            <th scope="col">To Location</th>
+            <th scope="col">Date</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of bookData">
+            <td>{{row.id}}</td>
+            <td>{{row.customerName}}</td>
+            <td>{{row.flightName}}</td>
+            <td>{{row.flightNumber}}</td>
+            <td>{{row.seatNumber}}</td>
+            <td>{{row.fromLocation}}</td>
+            <td>{{row.toLocation}}</td>
+            <td>{{row.date}}</td>
+            
+            <td>
+                <button (click)="onEdit(row)" style="color: aliceblue;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-secondary">Edit</button>
+                <button (click)="deleteBook(row)" class="btn btn-danger mx-3">Cancel</button>
+                <a href="http://localhost:8080">
+                <button  class="btn btn-primary" routerLink="/app-payment">Payment</button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Id</label>
+                  <input type="text" formControlName="id" placeholder="Enter id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                   </div>
+                   <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Customer Name</label>
+                    <input type="text" formControlName="customerName" placeholder="Enter Name" class="form-control" id="exampleInputPassword1">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Flight Name</label>
+                  <input type="text" formControlName="flightName" placeholder="Enter Name" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Flight Number</label>
+                  <input type="text" formControlName="flightNumber" placeholder="Enter Number" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Seat Number</label>
+                    <input type="text" formControlName="seatNumber" placeholder="Enter Number" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">From Location</label>
+                    <input type="text" formControlName="fromLocation" placeholder="Enter Location" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">To Location</label>
+                    <input type="text" formControlName="toLocation" placeholder="Enter Location" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Date</label>
+                    <input type="text" formControlName="date" placeholder="Enter date" class="form-control" id="exampleInputPassword1">
+                  </div>
+                 
+                  
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="postBookDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateBookDetails()" class="btn btn-primary">Update</button>
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+

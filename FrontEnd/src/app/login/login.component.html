@@ -1,0 +1,35 @@
+
+<h1 style="color:rgb(0, 0, 0);">{{response}}</h1>
+<div class="login-page">
+    <mat-card class="mat-elevation-z12 signin-bg">
+        <mat-card-title style="text-align:center;">
+            <mat-icon aria-hidden="false">login</mat-icon>SignIn</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+            <mat-tab label="Sign In">
+                <mat-card-content>
+
+                    <form (ngSubmit)="onSubmit()">
+                        <mat-form-field>
+                            <input matInput placeholder="Username" required name="user" [(ngModel)]="authenticationRequest.username">
+
+                            <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" type="password" required minlength="6" name="password" [(ngModel)]="authenticationRequest.password">
+                           
+                            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                {{showPassword?'visibility':'visibility_off'}}
+                            </mat-icon>
+                        </mat-form-field>
+                        <mat-checkbox>Remember Me!</mat-checkbox>
+                        <button mat-raised-button class="login-button"  >
+                  Sign In
+                </button>
+                        <a routerLink="/register" style="float: right;color:rgba(0, 0, 255, 0.616);">New User? Click on SignUp</a>
+                    </form>
+                </mat-card-content>
+            </mat-tab>
+          
+        </mat-tab-group>
+    </mat-card>
+</div>

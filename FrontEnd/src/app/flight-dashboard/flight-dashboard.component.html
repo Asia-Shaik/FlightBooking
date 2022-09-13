@@ -1,0 +1,87 @@
+<nav class="navbar navbar-light bg-secondary">
+    <div class="container-fluid">
+    <h1 style="color: aliceblue;"> Flight </h1>
+    <div class="d-flex">
+    
+    
+    </div>
+    </div>
+    </nav>
+    
+    <table class="table mt-3">
+    <thead>
+    <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Flight Name</th>
+    <th scope="col">Flight Charge</th>
+    <th scope="col">Flight Number</th>
+    <th scope="col">From Location</th>
+    <th scope="col">To Location</th>
+    <th scope="col">Date</th>
+    <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of flightData">
+    <td>{{row.id}}</td>
+    <td>{{row.flightName}}</td>
+    <td>{{row.flightCharge}}</td>
+    <td>{{row.flightNumber}}</td>
+    <td>{{row.fromLocation}}</td>
+    <td>{{row.toLocation}}</td>
+    <td>{{row.date}}</td>
+    
+    <td>
+    
+    <button  class="btn btn-primary" routerLink="/book">Book now</button>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    
+    
+    <!--Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Flight Details</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <form [formGroup]="formValue">
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Id</label>
+    <input type="text" formControlName="id" placeholder="Enter id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Flight Name</label>
+     <input type="text" formControlName="flightName" placeholder="Enter flightName" class="form-control" id="exampleInputPassword1">
+     </div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Flight Charge</label>
+   <input type="text" formControlName="flightCharge" placeholder="Enter amount" class="form-control" id="exampleInputPassword1">
+   </div>
+  <div class="mb-3">
+   <label for="exampleInputPassword1" class="form-label">Flight Number</label>
+  <input type="text" formControlName="flightNumber" placeholder="Enter Number" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">From Location</label>
+   <input type="text" formControlName="fromLocation" placeholder="Enter fromLocation" class="form-control" id="exampleInputPassword1">
+   </div>
+   <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">To Location</label>
+   <input type="text" formControlName="toLocation" placeholder="Enter toLocation" class="form-control" id="exampleInputPassword1">
+   </div>
+   <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Date</label>
+   <input type="text" formControlName="date" placeholder="Enter date" class="form-control" id="exampleInputPassword1">
+   </div>
+                    
+  </form>
+  
+          </div>
+        </div>
+      </div>
+    
